@@ -104,5 +104,5 @@ class Model():
 
         return combined
 
-test = Model('BK')
+test = Model('^GSPC')
 print(test.precision_score)
