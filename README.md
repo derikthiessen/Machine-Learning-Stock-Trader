@@ -4,15 +4,15 @@ NOTE: to run these files on your local machine, some edits need to be made some 
 
 * In ‘Macro_Data.py’, an API key from the St. Louis Federal Reserve (https://fred.stlouisfed.org/) is needed so that the latest macroeconomic data can be accessed.
 
-o A note at the top of the file specifies where this API key is needed to be input.
+    o A note at the top of the file specifies where this API key is needed to be input.
 
 * In ‘Serialization.py’, several default values for directory paths are needed to be updated so that the models and precision score values can be saved locally. Saving the models created using ‘Model_Builder.py’ is preferred to rerunning ‘Model_Builder.py’ several times as the models take a significant amount of time to create.
 
-o A note at the top of the file specifies all the lines where the directory variable should be updated.
+    o A note at the top of the file specifies all the lines where the directory variable should be updated.
 
 * In ‘Emailer.py’, a credentials.json file is needed to be downloaded from Google Cloud’s Gmail API service. The path to this file should then be updated within the document. Additionally, the intended recipient of the email needs to have their email address input (preferably, but not necessarily, a Gmail address).
 
-o A note at the top of the file specifies the two lines where these values need to be input.
+    o A note at the top of the file specifies the two lines where these values need to be input.
 
 The files within the repository are described as follows:
 * Model_Builder.py: this file contains the code for the ‘Model’ class that creates machine learning models for different stock tickers.
