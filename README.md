@@ -30,20 +30,25 @@ The files within the repository are described as follows:
     o To have enough data to train a model, stocks needed at least 30 years’ worth of price data. Stocks that are eligible to be fed to the class are determined in Usable_Stocks.py.
 
 * Macro_Data.py: this file downloads the latest macroeconomic data as reported by the Federal Reserve Bank of St. Louis. It then preprocesses this data and derives some features that are stored as a class variable in Model_Builder.py so that all models can use this data as inputs.
-o The macroeconomic data used as inputs includes moving average ratios and trends over 5 separate time horizons (default values set to 2, 6, 12, 24, and 48 months) for 4 separate variables: CPI, interest rates, home sales, and the unemployment rate.
+
+    o The macroeconomic data used as inputs includes moving average ratios and trends over 5 separate time horizons (default values set to 2, 6, 12, 24, and 48 months) for 4 separate variables: CPI, interest rates, home sales, and the unemployment rate.
 
 * Usable_Stocks.py: this file uses BeautifulSoup to scrape the top 100 largest tickers in terms of market capitalization off Yahoo Finance. These tickers then have their price data downloaded, and if enough price data is available to train models on, are appended to a list of usable tickers. These tickers are later saved in Serialization.py and represent the 31 tickers that I trained my models on.
-o The threshold for having enough data was set to be ~30 years where all the model’s features were available. This meant that stocks needed to have data dating back to at least 1990, as some of the models’ features involved the use of trailing data up to 1000 trading days (or 4 full years).
+
+    o The threshold for having enough data was set to be ~30 years where all the model’s features were available. This meant that stocks needed to have data dating back to at least 1990, as some of the models’ features involved the use of trailing data up to 1000 trading days (or 4 full years).
 
 * Serialization.py: this file is used to save the outputs of Model_Builder.py and Usable_Stocks.py. Outputs can be saved to the user’s local desktop by adjusting the default path variables, as mentioned at the start of this README. Both these files (especially Model_Builder.py) take significant amounts of time and computing power to run, so saving previously created models and tickers scraped off Yahoo Finance are beneficial.
-o This file employs Python’s built-in libraries, pickle and os, to create directories on the local computer as well as to dump and retrieve outputs from pickle files.
+
+    o This file employs Python’s built-in libraries, pickle and os, to create directories on the local computer as well as to dump and retrieve outputs from pickle files.
 
 * New_Predictions.py: this file takes the saved models and tickers from Serialization.py and generates predictions for tomorrow’s price changes. To generate these predictions, the latest data for each saved ticker is downloaded, and the model features are derived from this data. Similarly, the latest macroeconomic data is downloaded from the Fred API so that the necessary features using that data can be included in the models’ inputs.
-o This file returns tomorrow’s price increase predictions as a dictionary of ticker-prediction pairs that can be printed to the terminal. Alternatively, the model can send these predictions in email format to an intended recipient using Emailer.py
+
+    o This file returns tomorrow’s price increase predictions as a dictionary of ticker-prediction pairs that can be printed to the terminal. Alternatively, the model can send these predictions in email format to an intended recipient using Emailer.py
 
 * Emailer.py: this file runs a script that collects all the saved models’ price increase predictions for the next trading day and emails them to an intended recipient. This email also reports the precision scores of the models that are used to make predictions.
-o This file makes use of Google’s cloud computing platform and its Gmail API to send emails to an intended recipient.
+
+    o This file makes use of Google’s cloud computing platform and its Gmail API to send emails to an intended recipient.
 
 * Finally, Tickers_List.pkl includes the saved tickers from Usable_Stocks.py, and the folder Saved_Models includes a bunch of .pkl files containing models I created for the tickers in Tickers_List.pkl. In Saved_Models, there is also a pickle file, Precision_Scores.pkl, which has the precision scores of all the saved models.
 
-If you made it this far in my README, thank you! I would love some feedback on how I can improve this project, or some other ideas I can build next. You can reach me at derikt03@live.com
+If you made it this far in the README, thank you! I would love some feedback on how I can improve this project, or some other ideas I can build next. You can reach me at derikt03@live.com
