@@ -1,4 +1,4 @@
-*DISCLAIMER* Nothing in this repository should be considered as financial advice; this is an educational project only, use at your own discretion
+*DISCLAIMER* Nothing in this repository should be considered as financial advice; this is an educational project only, use at your own discretion. While machine learning is becoming much more common in stock market trading and has garnered more support from major Canadian regulatory bodies, such as the Ontario Securities Commission (chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://oscinnovation.ca/resources/Report-20231010-artificial-intelligence-in-capital-markets.pdf) and the Canadian Securities Administrators (https://www.securities-administrators.ca/news/the-canadian-securities-administrators-launches-a-regulatory-sandbox-initiative/), the end user is still ultimately responsible for their trading decisions.
 
 This repository contains all the files for a machine-learning stock predictor. 
 
