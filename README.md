@@ -1,3 +1,5 @@
+*DISCLAIMER* Nothing in this repository should be considered as financial advice; this is an educational project only, use at your own discretion
+
 This repository contains all the files for a machine-learning stock predictor. 
 
 NOTE: to run these files on your local machine, some edits need to be made some of the variables. These include:
